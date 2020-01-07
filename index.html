@@ -381,10 +381,11 @@ var mesh;
 				var mymodels = new Array();
 				
 			//var mesh1 =	mymodels[0] = 'obj/models/My_r2_astro_droid.fbx';
-			var mesh1
+			var mesh1 = new THREE.Mesh(geometry, material);
 			var mesh2 
 			var mesh3  
-		 		
+		 	var meshrotate = new THREE.Meah(geometry, material );
+			
 			 
 				 
 			
@@ -408,29 +409,21 @@ var mesh;
 
 				if ( type === 1 ) {
 				
-				 loader.load( 'obj/models/rd_unit_a!.fbx', function ( objectA ) {
+				 loader.load( 'obj/models/rd_unit_daz.fbx', function ( objectA ) {
 					mesh1 = objectA
 					mixer = new THREE.AnimationMixer( mesh1 ); action1 = mixer.clipAction( objectA.animations[ 0 ] );
 					action1.play();
 
 				 
-					
-					 function rotateObject2(mesh1, degreeX=0, degreeY= 0, degreeZ=0){
-			
-			mesh1.rotateY(THREE.Math.degToRad(degreeY));
-			mesh1.rotateZ(THREE.Math.degToRad(degreeZ));
-			
-			mesh1.rotateX(THREE.Math.degToRad(degreeX));
-		
-			}
-				
+			 
 					//object.scale.set( 4, 4, 4 );
 					mesh1.scale.set( 0.2, 0.2, 0.2 ); //left-Right, top-botom, Zoom
 				
-					rotateObject2(mesh1,-30,-0,0);
-					//rotateObject2(object, -90,0,0); //mocap positition
-					mesh1.position.set(-0,0,-0.0);
-  
+					rotateObject2(mesh1,-0,-50,0);
+					rotateObject2(objectA, -90,0,0); //mocap positition
+					mesh1.position.set(-0,0,-0.9);
+					
+					mesh1.rotateX( Math.PI / 2 );
 					scene.add( mesh1);
 					  
 					mesh1.visible = true
