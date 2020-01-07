@@ -380,7 +380,7 @@ var mesh;
 				var loader = new THREE.FBXLoader();
 				var mymodels = new Array();
 				
-			//var mesh1 =	mymodels[0] = 'obj/models/My_r2_astro_droid.fbx';
+			 
 			var mesh1 
 			var mesh2 
 			var mesh3  
@@ -409,7 +409,7 @@ var mesh;
 
 				if ( type === 1 ) {
 				
-				 loader.load( 'obj/models/rd_unit_daz.fbx', function ( objectA ) {
+				 loader.load( 'obj/models/rd_unit_dazII.fbx', function ( objectA ) {
 					mesh1 = objectA
 					mixer = new THREE.AnimationMixer( mesh1 ); action1 = mixer.clipAction( objectA.animations[ 0 ] );
 					action1.play();
